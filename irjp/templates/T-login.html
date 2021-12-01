@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teachers Login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/T-login.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<div class="img">
+			<img src="{% static 'img/T-login2.png' %}"> 
+            
+		</div>
+		<div class="login-content">
+			<form action="login.html" method="post">
+				<img src="{% static 'img/T-icon.png' %}">
+				<h2 class="title">Teacher Login</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input" id="user_input" name="user_input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" id="password_input" name="password_input">
+            	   </div>
+            	</div>
+				<a href="table">submit
+				</a>
+            </form>
+        </div>
+    </div>
+   
+    <script type="text/javascript" src="js/main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin View</title>
+    <title>JavaScript Table Filter Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="tablesort.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.css">
+</head>
+
+<body class="mt32">
+    <div class="container">
+        <div class="search-box">
+      <input class="search-txt" type="search" placeholder="Search..." class="form-control search-input" data-table="customers-list">
+      <a class="search-btn" href="#"><i class="fas fsearch"></i></a>
+        </div>
+        <table class="table table-sortable mt32 customers-list" id="s_table">
+          <thead>
+            <tr>
+                <th>I.D</th>
+              <th>STUDENT NAME</th>
+              <th>COURSE</th>
+              <th>TEL NO.</th>
+              <th>ADDRESS</th>
+              <th>CITY</th>
+              <th>PROVINCE</th>
+              <th>BIRTHDAY</th>
+              <th>BIRTHPLACE</th>
+              <th>AGE</th>
+              <th>CIVIL STATUS</th>
+              <th>NATIONALITY</th>
+              <th>ACTION</th>
+       
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for reg in data %}
+              <tr> 
+                  <td>{{ reg.id }}</td>   
+                  <td>{{ reg.sname }}, {{ reg.fname }} {{ reg.mname }}</td>
+                  <td>{{ reg.course }}</td>
+                  <td>{{ reg.telno }}</td>
+                  <td>{{ reg.nostreet }}</td>
+                  <td>{{ reg.city }}</td>
+                  <td>{{ reg.province }}</td>
+                  <td>{{ reg.birthday }}</td>
+                  <td>{{ reg.birthplace }}</td>
+                  <td>{{ reg.age }}</td>
+                  <td>{{ reg.civilstatus }}</td>
+                  <td>{{ reg.nationality }}</td>
+                  <td>
+                      <a href=" {% url 'edit' reg.id %} " class="btn btn-primary" >EDIT</a>
+                      <a href=" {% url 'delete' reg.id %} " class="btn btn-danger" >DELETE</a>
+                    </td>
+              </tr>
+            {% endfor %}
+              
+            </tbody>
+            </table>    
+        </div>
+
+    <script>
+    
+   /* var s_list = [
+        {"fullname": "Jericho Lois T Dionisio", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-0360"},
+        {"fullname": "Bermon O Ferreras", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-"},
+        {"fullname": "Nigelle Jarred Salvador", "year_section": "BET-CPET", "company_name": "Analog", "student_id": "TUPC-18-"},
+        {"fullname": "Leomhar Manuel", "year_section": "BET-CPET", "company_name": "Joker ng CPET", "student_id": "TUPC-18-"},
+                
+        
+    ];*/
+        
+        
+        function makeTableFromList(list){
+      var table = document.getElementById('s_table');
+      for (var i = 0; i < list.length; i++){
+        var listKey = Object.keys(list[i]);
+        var listVal = Object.values(list[i]);
+        var newRow = table.insertRow(table.rows.length);
+        for (var j = 0; j < listKey.length; j++) {
+          newCell = newRow.insertCell(j);
+          newCell.innerHTML = listVal[j];
+        }
+      }
+    };
+        
+    window.addEventListener("load", makeTableFromList());
+    
+    </script>
+    <script>
+        (function(document) {
+            'use strict';
+
+            var TableFilter = (function(myArray) {
+                var search_input;
+
+                function _onInputSearch(e) {
+                    search_input = e.target;
+                    var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
+                    myArray.forEach.call(tables, function(table) {
+                        myArray.forEach.call(table.tBodies, function(tbody) {
+                            myArray.forEach.call(tbody.rows, function(row) {
+                                var text_content = row.textContent.toLowerCase();
+                                var search_val = search_input.value.toLowerCase();
+                                row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
+                            });
+                        });
+                    });
+                }
+
+                return {
+                    init: function() {
+                        var inputs = document.getElementsByClassName('search-box');
+                        myArray.forEach.call(inputs, function(input) {
+                            input.oninput = _onInputSearch;
+                        });
+                    }
+                };
+            })(Array.prototype);
+
+            document.addEventListener('readystatechange', function() {
+                if (document.readyState === 'complete') {
+                    TableFilter.init();
+                }
+            });
+
+        })(document);
+    </script>
+  
+ 
+
+<form align="right" name="form1" method="post" action="Home">
+    {% csrf_token %}
+    <label class="logoutLblPos">
+    <input name="submit2" href = "Home" type="submit" id="submit2" value="log out"">
+    </label>
+  </form>
+
+    <script src="tablesort.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>

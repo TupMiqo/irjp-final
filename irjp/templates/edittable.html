@@ -1,0 +1,419 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Register.css' %}">
+    <link rel="js" href="js.js" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+</head>
+    
+<body>
+    <section class="get_in_touch">
+    <h1 class="title">Update Form</h1>
+        
+    
+    <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+        <div class="contact-form row">
+            <div class="form-field col-lg-3">
+                <input id="sname" class="input-text" type="text" name="sname" value = "{{ student.sname }}" >
+                <label for="sname" class="label">Surname</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="fname" class="input-text" type="text" name="fname" value = "{{ student.fname }}" >
+                <label for="fname" class="label">Firstname</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="mname" class="input-text" type="text" name="mname" value = "{{ student.mname }}">
+                <label for="mname" class="label">Middlename</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="course" class="input-text" type="text" name="course" value = "{{ student.course }}" >
+                <label for="course" class="label">Course</label>
+            </div>
+            <h2 class="Name col-lg-12"><br><br><br>PRESENT ADDRESS<br><br></h2>
+            <div class="form-field col-lg-3">
+                <input id="Nostreet" class="input-text" type="text" name="nostreet" value = "{{ student.nostreet }}" >
+                <label for="No.street" class="label">No.street</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="city" class="input-text" type="text" name="city" value = "{{ student.city }}" >
+                <label for="city" class="label">City</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="province" class="input-text" type="text" name="province" value = "{{ student.province }}" >
+                <label for="province" class="label">Province</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="TelNo" class="input-text" type="text" name="telno" value = "{{ student.telno }}" >
+                <label for="Tel.No." class="label">Tel.No.  </label>
+            </div>
+            <div class="form-field col-lg-5">
+                <input id="birthday" class="input-text" type="text" name="birthday" value = "{{ student.birthday }}" >
+                <label for="birthday" class="label">Birth Day</label>
+            </div>
+            <div class="form-field col-lg-5">
+                <input id="birthplace" class="input-text" type="text" name="birthplace" value = "{{ student.birthplace }}" >
+                <label for="birthplace" class="label">Birth Place</label>
+            </div>
+            <div class="form-field col-lg-5">
+                <input id="age" class="input-text" type="text" name="age" value = "{{ student.age }}" >
+                <label for="age" class="label">Age</label>
+            </div>
+            <div class="form-field col-lg-5">
+                <input id="civilstatus" class="input-text" type="text" name="civilstatus" value = "{{ student.civilstatus }}" >
+                <label for="civil_status" class="label">Civil Status</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="nationality" class="input-text" type="text" name="nationality" value = "{{ student.nationality }}" >
+                <label for="nationality" class="label">Nationality</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="height" class="input-text" type="text" name="height" value = "{{ student.height }}" >
+                <label for="height" class="label">Height:Ft</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="inn" class="input-text" type="text" name="inn" value = "{{ student.inn }}" >
+                <label for="in" class="label">In</label>
+            </div>
+            <div class="form-field col-lg-3">
+                <input id="weight" class="input-text" type="text" name="weight" value = "{{ student.weight }}" >
+                <label for="weight" class="label">Weight</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="rescertno" class="input-text" type="text" name="rescertno" value = "{{ student.rescertno }}">
+                <label for="res.cert.no" class="label">Res.Cert.No</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="issued" class="input-text" type="text" name="issued" value = "{{ student.issued }}">
+                <label for="issued" class="label">Issued On</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="at" class="input-text" type="text" name="at" value = "{{ student.at }}">
+                <label for="at" class="label">at</label>
+            </div>
+            <div class="form-field col-lg-7">
+                <input id="SSSno" class="input-text" type="text" name="SSSno" value = "{{ student.SSSno }}">
+                <label for="SSS no." class="label">SSS No.</label>
+            </div>
+            <div class="form-field col-lg-7">
+                <input id="hobbies" class="input-text" type="text" name="hobbies" value = "{{ student.hobbies }}" >
+                <label for="hobbies" class="label">Hobbies</label>
+            </div>
+            <div class="form-field col-lg-7">
+                <input id="talent" class="input-text" type="text" name="talent" value = "{{ student.talent }}" >
+                <label for="talent" class="label">Talent in providing Entertainment</label>
+            </div>
+            <div class="form-field col-lg-7">
+                <input id="physical" class="input-text" type="text" name="physical" value = "{{ student.physical }}" >
+                <label for="physical" class="label">Physical Handicap or Disability</label>
+            </div>
+            <div class="form-field col-lg-7">
+                <input id="married" class="input-text" type="text" name="married" value = "{{ student.married }}">
+                <label for="married" class="label">If married, name of Spouse</label>
+            </div>
+            <div class="form-field col-lg-7">
+                <input id="language" class="input-text" type="text" name="language" value = "{{ student.language }}" >
+                <label for="language" class="label">Language &#38 Dialects Spoken</label>
+            </div>
+            
+             <h2 class="Name col-lg-12"><br><br><br>Family Background<br><br></h2>
+            
+            <div class="form-field col-lg-4">
+                <input id="fatherN" class="input-text" type="text" name="fatherN" value = "{{ student.fatherN }}">
+                <label for="fatherN" class="label">Father's Name</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="occupationF" class="input-text" type="text" name="occupationF" value = "{{ student.occupationF }}">
+                <label for="occupationF" class="label">Occupation</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="mobileF" class="input-text" type="text" name="mobileF" value = "{{ student.mobileF }}">
+                <label for="mobileF" class="label">Mobile No.</label>
+            </div>
+            <div class="form-field col-lg-9">
+                <input id="addressF" class="input-text" type="text" name="addressF" value = "{{ student.addressF }}">
+                <label for="addressF" class="label">Address</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="motherN" class="input-text" type="text" name="motherN" value = "{{ student.motherN }}">
+                <label for="motherN" class="label">Mother's Name</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="occupationM" class="input-text" type="text" name="occupationM" value = "{{ student.occupationM }}">
+                <label for="occupationM" class="label">Occupation</label>
+            </div>
+            <div class="form-field col-lg-4">
+                <input id="mobileM" class="input-text" type="text" name="mobileM" value = "{{ student.mobileM }}">
+                <label for="mobileM" class="label">Mobile No.</label>
+            </div>
+            <div class="form-field col-lg-9">
+                <input id="addressM" class="input-text" type="text" name="addressM " value = "{{ student.addressM }}">
+                <label for="addressM" class="label">Address</label>
+            </div>
+            <div class="form-field col-lg-4 col-xs-12">
+                <input id="brothers" class="input-text" type="text" name="brothers" value = "{{ student.brothers }}">
+                <label for="brothers" class="label">No.of Brothers</label>
+            </div>
+            <div class="form-field col-lg-4 col-xs-12">
+                <input id="sister" class="input-text" type="text" name="sister" value = "{{ student.sister }}">
+                <label for="sister" class="label">Sister</label>
+            </div>
+        
+               
+                <div class="form-field col-lg-5">
+                    <br><br><br><br>
+			  <input class="input-text" type="text" id="date" name="date" value = "{{ student.date }}" >
+                    <label for="date" class="label">Date</label>
+            </div>
+            
+            <div class="form-field col-lg-5">
+                <a href="{% url 'table' %}">Back
+                </a>
+            </div>
+            <div class="form-field col-lg-5">
+                <button type="button" class="submit-btn" data-toggle="modal" data-target="#userInputReview" onclick="getUserInput()">Submit</button>
+        </div>
+            </div>
+            
+           </div>
+        <div class="modal" id="userInputReview">
+            
+        
+    <div class="modal-dialogue">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Your Information</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h2 class="Name col-lg-12">FULLNAME (Printed with clear ink)<br><br><br></h2>
+            <p id="FullName" ></p>
+            <h2 class="Name col-lg-12"><br><br><br>PRESENT ADDRESS<br><br></h2>
+            <p id="PresentAddress"></p>
+            <p id="PresentAddress2"></p>
+            <p id="PresentAddress3"></p>
+            <p id="PresentAddress4"></p>
+            <p id="PresentAddress5"></p>
+            <p id="PresentAddress6"></p>
+            <p id="PresentAddress7"></p>
+            <p id="PresentAddress8"></p>
+            <p id="PresentAddress9"></p>
+            <p id="PresentAddress10"></p>
+            <h2 class="Name col-lg-12"><br><br><br>Family Background<br><br></h2>
+            <p id="FamilyBackground"></p>
+            <p id="FamilyBackground2"></p>
+            <p id="FamilyBackground3"></p>
+            <p id="FamilyBackground4"></p>
+            <p id="FamilyBackground5"></p>
+            <p id="userDates"></p>
+ 
+ 
+        </div>
+        <div class="modal-footer">
+            <input type="text" id="snameH" name="sname" hidden>
+            <input type="text" id="fnameH" name="fname" hidden> 
+            <input type="text" id= "mnameH" name="mname" hidden>
+            <input type="text" id= "courseH" name="course" hidden>
+            <input type="text" id= "no-streetH" name="nostreet" hidden>
+            <input type="text" id= "cityH" name="city" hidden>
+            <input type="text" id= "provinceH" name="province" hidden>
+            <input type="text" id= "tel-noH" name="telno" hidden>
+            <input type="text" id= "birthdayH" name="birthday" hidden>
+            <input type="text" id= "birthplaceH" name="birthplace" hidden>
+            <input type="text" id= "ageH" name="age" hidden>
+            <input type="text" id= "civil-statusH" name="civilstatus" hidden>
+            <input type="text" id= "nationalityH" name="nationality" hidden>
+            <input type="text" id= "heightH" name="height" hidden>
+            <input type="text" id= "innH" name="inn" hidden>
+            <input type="text" id= "weightH" name="weight" hidden>
+            <input type="text" id= "recert-noH" name="rescertno" hidden>
+            <input type="text" id= "issuedH" name="issued" hidden>
+            <input type="text" id= "atH" name="at" hidden>
+            <input type="text" id= "SSS-noH" name="SSSno" hidden> 
+            <input type="text" id= "hobbiesH" name="hobbies" hidden>
+            <input type="text" id= "talentH" name="talent" hidden>
+            <input type="text" id= "physicalH" name="physical" hidden>
+            <input type="text" id= "marriedH" name="married" hidden>
+            <input type="text" id= "languageH" name="language" hidden>
+            <input type="text" id= "fatherH" name="father" hidden>
+            <input type="text" id= "occupationFH" name="occupationF" hidden>
+            <input type="text" id= "mobileFH" name="mobileF" hidden>
+            <input type="text" id= "addressFH" name="addressF" hidden>
+            <input type="text" id= "motherH" name="mother" hidden>
+            <input type="text" id= "occupationMH" name="occupationM" hidden>
+            <input type="text" id= "mobileMH" name="mobileM" hidden>
+            <input type="text" id= "addressMH" name="addressM" hidden>
+            <input type="text" id= "brothersH" name="brothers" hidden>
+            <input type="text" id= "sisterH" name="sister" hidden>
+            <input type="text" id= "dateH" name="date" hidden>
+
+                
+          <input type="submit" class="btn btn-success" value = 'Update'>
+          
+        </form>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+        
+  <script type="text/javascript">
+     
+    function getUserInput() {
+     
+      var SurName = document.getElementById('sname').value;
+      var FirstName = document.getElementById('fname').value;
+      var MiddleName = document.getElementById('mname').value;
+      var Course = document.getElementById('course').value;
+      var NoStreet = document.getElementById('Nostreet').value;
+      var City = document.getElementById('city').value;
+      var Province = document.getElementById('province').value;
+      var TelNo = document.getElementById('TelNo').value;
+      var Birthday = document.getElementById('birthday').value;
+      var Birthplace = document.getElementById('birthplace').value;
+      var Age = document.getElementById('age').value;
+      var CivilStatus = document.getElementById('civilstatus').value;
+      var Nationality = document.getElementById('nationality').value;
+      var Height = document.getElementById('height').value;
+      var In = document.getElementById('inn').value;
+      var Weight = document.getElementById('weight').value;
+      var ResCertNo = document.getElementById('rescertno').value;
+      var Issued = document.getElementById('issued').value;
+      var At = document.getElementById('at').value;
+      var SSSno = document.getElementById('SSSno').value;
+      var Hobbies = document.getElementById('hobbies').value;
+      var Talent = document.getElementById('talent').value;
+      var Physical = document.getElementById('physical').value;
+      var Married = document.getElementById('married').value;
+      var Language = document.getElementById('language').value;
+      var Father = document.getElementById('fatherN').value;
+      var OccupationF = document.getElementById('occupationF').value;
+      var MobileF = document.getElementById('mobileF').value;
+      var AddressF = document.getElementById('addressF').value;
+      var Mother = document.getElementById('motherN').value;
+      var OccupationM = document.getElementById('occupationM').value;
+      var MobileM = document.getElementById('mobileM').value;
+      var AddressM = document.getElementById('addressM').value;
+      var Brothers = document.getElementById('brothers').value;
+      var Sister = document.getElementById('sister').value;
+      var Dates = document.getElementById('date').value;
+
+      console.log(SurName);  
+      console.log(FirstName);
+      console.log(MiddleName);
+      console.log(Course);
+      console.log(NoStreet);
+      console.log(City);
+      console.log(Province);
+      console.log(TelNo);
+      console.log(Birthday);
+      console.log(Birthplace);
+      console.log(Age);
+      console.log(CivilStatus);
+      console.log(Nationality);
+      console.log(Height);
+      console.log(inn);
+      console.log(Weight);
+      console.log(ResCertNo);
+      console.log(Issued);
+      console.log(At);
+      console.log(SSSno);
+      console.log(Hobbies);
+      console.log(Talent);
+      console.log(Physical);
+      console.log(Married);
+      console.log(Language);
+      console.log(Father);
+      console.log(OccupationF);
+      console.log(MobileF);
+      console.log(AddressF);
+      console.log(Mother);
+      console.log(OccupationM);
+      console.log(MobileM);
+      console.log(AddressM);
+      console.log(Brothers);
+      console.log(Sister);
+      console.log(Dates);
+        
+      document.getElementById('snameH').value = SurName;
+      document.getElementById('fnameH').value = FirstName; 
+      document.getElementById('mnameH').value = MiddleName;  
+      document.getElementById('courseH').value = Course;  
+      document.getElementById('no-streetH').value = NoStreet;  
+      document.getElementById('cityH').value = City;  
+      document.getElementById('provinceH').value = Province;  
+      document.getElementById('tel-noH').value = TelNo;  
+      document.getElementById('birthdayH').value = Birthday;  
+      document.getElementById('birthplaceH').value = Birthplace;  
+      document.getElementById('ageH').value = Age;  
+      document.getElementById('civil-statusH').value = CivilStatus;  
+      document.getElementById('nationalityH').value = Nationality;  
+      document.getElementById('heightH').value = Height;  
+      document.getElementById('innH').value = In;  
+      document.getElementById('weightH').value = Weight;  
+      document.getElementById('recert-noH').value = ResCertNo;  
+      document.getElementById('issuedH').value = Issued;  
+      document.getElementById('atH').value = At;  
+      document.getElementById('SSS-noH').value = SSSno;  
+      document.getElementById('hobbiesH').value = Hobbies;  
+      document.getElementById('talentH').value = Talent ;  
+      document.getElementById('physicalH').value = Physical ;  
+      document.getElementById('marriedH').value = Married;  
+      document.getElementById('languageH').value = Language;  
+      document.getElementById('fatherH').value = Father;  
+      document.getElementById('occupationFH').value = OccupationF;  
+      document.getElementById('mobileFH').value = MobileF;  
+      document.getElementById('addressFH').value = AddressF;  
+      document.getElementById('motherH').value = Mother;  
+      document.getElementById('occupationMH').value = OccupationM ;  
+      document.getElementById('mobileMH').value = MobileM;  
+      document.getElementById('addressMH').value = AddressM;  
+      document.getElementById('brothersH').value = Brothers; 
+      document.getElementById('sisterH').value = Sister;  
+      document.getElementById('dateH').value = Date;  
+    
+        console.log(document.getElementById('fnameH').value)
+        
+        
+   
+      document.getElementById('FullName').innerHTML = "Surname: " + SurName + "     Firstname: " + FirstName + "     Middlename: " + MiddleName + "    Course: " + Course;
+      document.getElementById('PresentAddress').innerHTML = "No Street: " + NoStreet + "City: " + City +"Province: " + Province + "Tel No: " + TelNo;
+      document.getElementById('PresentAddress2').innerHTML = "Birthday: " + Birthday + "Birthplace: " + Birthplace;
+      document.getElementById('PresentAddress3').innerHTML = "Age: " + Age + "Civil Status: " + CivilStatus;
+      document.getElementById('PresentAddress4').innerHTML = "Nationality: " + Nationality + "Height: " + Height + "In: " + In + "Weight: " + Weight;
+      document.getElementById('PresentAddress5').innerHTML = "Res Cert No.: " + ResCertNo + "Issued On: " + Issued + "At: " + At;
+      document.getElementById('PresentAddress6').innerHTML = "SSS No: " + SSSno;
+      document.getElementById('PresentAddress7').innerHTML = "Hobbies: " + Hobbies;
+      document.getElementById('PresentAddress8').innerHTML = "Physical Handicap or Disability: " + Physical;
+      document.getElementById('PresentAddress9').innerHTML = "If married, name of Spouse: " + Married;
+      document.getElementById('PresentAddress10').innerHTML = "Language & Dialects Spoken: " + Language;
+      document.getElementById('FamilyBackground').innerHTML = "Father's Name: " + Father + "Occupation: " + OccupationF + "Mobile No.: " + MobileF;
+      document.getElementById('FamilyBackground2').innerHTML = "Address: " + AddressF;
+      document.getElementById('FamilyBackground3').innerHTML = "Mother's Name: " + Mother + "Occupation: " + OccupationM + "Mobile No.: " + MobileM;
+      document.getElementById('FamilyBackground4').innerHTML = "Address: " + AddressM;
+      document.getElementById('FamilyBackground5').innerHTML = "Brothers No: " + Brothers + "Sister: " + Sister;
+      document.getElementById('userDates').innerHTML = "Date: " + Dates;
+    
+    }
+      </script>
+        </section>
+        </body>
+</html>

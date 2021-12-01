@@ -1,0 +1,119 @@
+* {
+  font-family: sans-serif; 
+}
+
+.table-sortable{
+  
+  border-collapse: collapse;
+  margin-top: 150px;
+  font-size: 16px;
+  min-width: 400px;       
+  margin: auto;
+  table-layout: fixed;
+  margin-top: 150px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-sortable thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table-sortable th,
+.table-sortable td {
+  padding: 12px 15px;
+}
+
+.table-sortable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-sortable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table-sortable tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.table-sortable tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+
+
+.search-box {
+   position: absolute;
+   top: 16%;
+   left: 21%;   
+   transform: translate(-50%, -50%);
+   background:#009879;
+   height: 58px;
+   border-radius: 40px; 
+   padding: 10px;       
+}
+
+.search-btn{
+    color: #009879;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.table-sortable th {
+  cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+  content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.logoutLblPos{
+
+  position:fixed;
+  right:10px;
+  top:5px;
+}
